@@ -89,7 +89,7 @@ class FaceRecognitionSystem:
                       bg="#42aad3", pady=10)
         b1_1.place(x=250, y=500, width=100, height=30)
 
-        # Devloper button
+        # Developer button
         img8 = Image.open(r"C:\\Users\\gagan\\Desktop\\FaceRecognition\\images\\student.png")
         img8 = img8.resize((100, 100), Image.LANCZOS)
         self.photoimg8 = ImageTk.PhotoImage(img8)
@@ -97,7 +97,7 @@ class FaceRecognitionSystem:
         b1 = Button(bg_img, image=self.photoimg8, cursor="hand2")
         b1.place(x=425, y=400, width=100, height=100)
 
-        b1_1 = Button(bg_img, text="Devloper", cursor="hand2", font=("Helvetica", 9, "bold"), fg="white",
+        b1_1 = Button(bg_img, text="Developer", cursor="hand2", font=("Helvetica", 9, "bold"), fg="white",
                       bg="#42aad3", pady=10)
         b1_1.place(x=425, y=500, width=100, height=30)
 
