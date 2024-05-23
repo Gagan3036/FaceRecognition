@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageOps, ImageDraw
+from student import Student
+
 class FaceRecognitionSystem:
     def __init__(self, root):
         self.root = root
@@ -23,10 +25,10 @@ class FaceRecognitionSystem:
         img2 = img2.resize((100, 100), Image.LANCZOS)
         self.photoimg2 = ImageTk.PhotoImage(img2)
 
-        b1 = Button(bg_img, image=self.photoimg2,cursor="hand2")
+        b1 = Button(bg_img, image=self.photoimg2,command=self.student_details,cursor="hand2")
         b1.place(x=75, y=200, width=100, height=100)
 
-        b1_1 = Button(bg_img, text="Students Details", cursor="hand2", font=("Helvetica",9, "bold"), fg="white", bg="#42aad3", pady=10)
+        b1_1 = Button(bg_img, text="Students Details",command=self.student_details, cursor="hand2", font=("Helvetica",9, "bold"), fg="white", bg="#42aad3", pady=10)
         b1_1.place(x=75, y=300, width=100, height=30)
 
         # Detect Face button
@@ -112,6 +114,15 @@ class FaceRecognitionSystem:
         b1_1 = Button(bg_img, text="Exit", cursor="hand2", font=("Helvetica", 9, "bold"), fg="white",
                       bg="#42aad3", pady=10)
         b1_1.place(x=600, y=500, width=100, height=30)
+
+    # ============================================Fuction Button========================
+
+    def student_details(self):
+        self.new_window=Toplevel(self.root)
+        self.app=Student(self.new_window)
+
+
+
 if __name__ == "__main__":
     root = Tk()
     obj = FaceRecognitionSystem(root)
