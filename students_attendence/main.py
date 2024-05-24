@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk, ImageOps, ImageDraw
 from student import Student
+import os
 
 class FaceRecognitionSystem:
     def __init__(self, root):
@@ -84,10 +85,10 @@ class FaceRecognitionSystem:
         img7 = img7.resize((100, 100), Image.LANCZOS)
         self.photoimg7 = ImageTk.PhotoImage(img7)
 
-        b1 = Button(bg_img, image=self.photoimg7, cursor="hand2")
+        b1 = Button(bg_img, image=self.photoimg7, cursor="hand2", command=self.open_img)
         b1.place(x=250, y=400, width=100, height=100)
 
-        b1_1 = Button(bg_img, text="Photos", cursor="hand2", font=("Helvetica", 9, "bold"), fg="white",
+        b1_1 = Button(bg_img, text="Photos", cursor="hand2", command=self.open_img, font=("Helvetica", 9, "bold"), fg="white",
                       bg="#42aad3", pady=10)
         b1_1.place(x=250, y=500, width=100, height=30)
 
@@ -115,7 +116,12 @@ class FaceRecognitionSystem:
                       bg="#42aad3", pady=10)
         b1_1.place(x=600, y=500, width=100, height=30)
 
-    # ============================================Fuction Button========================
+
+    def open_img(self):
+        os.startfile("data")
+
+
+    # ============================================Fuction Button================================================
 
     def student_details(self):
         self.new_window=Toplevel(self.root)
