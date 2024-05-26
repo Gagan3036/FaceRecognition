@@ -327,7 +327,7 @@ class Student:
         self.student_table.bind("<ButtonRelease>", self.get_cursor)
         self.fetch_data()
 
-    # ==================================Function Declaration============================================================
+    # ===================================Function Declaration============================================================
 
     def add_data(self):
         if self.var_dep.get() == "Select Department" or self.var_std_name.get() == "" or self.var_std_id.get() == "":
