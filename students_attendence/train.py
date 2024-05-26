@@ -7,6 +7,7 @@ import cv2
 import os
 import numpy as np
 
+
 class train:
     def __init__(self, root):
         self.root = root
@@ -45,7 +46,7 @@ class train:
 
 # ===========================Train the classifier and save==========================
 
-        clf = cv2.face.LBPHFaceRcognizer_create()
+        clf = cv2.face.LBPHFaceRcognizer.create()
         clf.train(faces,ids)
         clf.write("classifier.xml")
         cv2.destroyAllWindows()
