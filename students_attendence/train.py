@@ -45,12 +45,14 @@ class train:
 
 
 # ===========================Train the classifier and save==========================
-
-        clf = cv2.face.LBPHFaceRcognizer.create()
-        clf.train(faces,ids)
-        clf.write("classifier.xml")
-        cv2.destroyAllWindows()
-        messagebox.showinfo("Result","Training datasets completed")
+        try:
+            clf = cv2.face.LBPHFaceRecognizer_create()
+            clf.train(faces,ids)
+            clf.write("classifier.xml")
+            cv2.destroyAllWindows()
+            messagebox.showinfo("Result","Training datasets completed")
+        except Exception as es:
+                messagebox.showerror("Error", f"Due To: {str(es)}", parent=self.root)
 
 
 if __name__ == "__main__":
